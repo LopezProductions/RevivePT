@@ -1,10 +1,10 @@
 /* Additional global tweaks */
 
 h1, h2, h3, h4 {
-  @apply font-semibold text-slate-900;
+  @apply font-heading font-semibold text-primary-dark;
 }
 
 p {
-  @apply text-slate-600;
+  @apply font-body text-neutral-dark;
 }
 

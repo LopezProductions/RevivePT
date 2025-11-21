@@ -12,7 +12,7 @@ function Footer() {
           >
             Browse More Templates →
           </a>
-          <p className="text-blue-600 font-semibold">Web2 Starter v1.0</p>
+          <p className="text-primary font-semibold">ShieldCare Health Template v1.0</p>
         </div>
       </div>
     </footer>

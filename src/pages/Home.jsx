@@ -7,43 +7,51 @@ function Home() {
   return (
     <div className="space-y-16">
       {/* Hero */}
-      <section className="text-center space-y-6">
-        <h1 className="text-4xl font-bold text-slate-900">
-          Insurance That Protects What Matters Most
+      <section className="text-center space-y-6 bg-gradient-to-br from-primary-light to-white rounded-3xl p-12">
+        <h1 className="text-4xl font-heading font-bold text-primary-dark">
+          Your Health. Your Care. Done Right.
         </h1>
-        <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
-          From home and auto to life and business coverage — SafeShield Insurance 
-          helps you safeguard your future with clarity, transparency, and affordable plans.
+        <p className="font-body text-neutral-dark max-w-2xl mx-auto text-sm leading-relaxed">
+          Compassionate, affordable coverage for individuals, families, and small businesses.
         </p>
-        <Button className="mt-4">Get a Free Quote</Button>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+          <Button className="bg-primary text-white hover:bg-primary-dark">Get a Free Quote</Button>
+          <Button variant="outline" className="border-primary text-primary hover:bg-primary-light">Schedule a Consultation</Button>
+        </div>
       </section>
 
       {/* Services Overview */}
       <section>
         <SectionHeader 
-          label="Our Coverage"
-          title="Comprehensive Insurance Plans"
-          description="Clear, flexible protection designed to match your lifestyle and needs."
+          label="Our Services"
+          title="Comprehensive Health & Wellness Plans"
+          description="Compassionate care designed to support your health journey at every stage of life."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          <Card title="Home Insurance">
-            Protect your home from fire, theft, water damage, and unexpected events.
-          </Card>
-          <Card title="Auto Insurance">
-            Affordable coverage for daily drivers, families, and commercial vehicles.
-          </Card>
-          <Card title="Life Insurance">
-            Secure your family's financial future with flexible life plans.
-          </Card>
-          <Card title="Business Insurance">
-            Coverage for freelancers, small businesses, and enterprises.
-          </Card>
-          <Card title="Health Insurance">
-            Simple, direct health coverage with nationwide provider access.
-          </Card>
-          <Card title="Travel Insurance">
-            Protect your trips, luggage, and health abroad with ease.
-          </Card>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Health Insurance Plans</h3>
+            <p className="text-neutral-dark mt-2 font-body">Flexible coverage options designed for every stage of life.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Family & Group Coverage</h3>
+            <p className="text-neutral-dark mt-2 font-body">Comprehensive plans that protect your entire family.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Dental & Vision Benefits</h3>
+            <p className="text-neutral-dark mt-2 font-body">Complete oral and vision care for optimal health.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Preventative Care Programs</h3>
+            <p className="text-neutral-dark mt-2 font-body">Proactive wellness programs to keep you healthy.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Wellness & Nutrition Support</h3>
+            <p className="text-neutral-dark mt-2 font-body">Guidance and resources for a healthier lifestyle.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+            <h3 className="text-primary-dark font-heading font-semibold">Telehealth Consultations</h3>
+            <p className="text-neutral-dark mt-2 font-body">Convenient virtual care from the comfort of your home.</p>
+          </div>
         </div>
       </section>
 
@@ -63,9 +71,9 @@ function Home() {
 
       {/* CTA */}
       <section className="text-center py-10">
-        <h2 className="text-xl font-semibold text-slate-900">Need help choosing the right plan?</h2>
-        <p className="text-slate-600 text-sm mt-2">Speak with a licensed insurance advisor.</p>
-        <Button className="mt-4">Schedule a Call</Button>
+        <h2 className="text-xl font-heading font-semibold text-primary-dark">Need help choosing the right plan?</h2>
+        <p className="font-body text-neutral-dark text-sm mt-2">Speak with a licensed healthcare advisor.</p>
+        <Button className="mt-4">Schedule a Consultation</Button>
       </section>
     </div>
   );

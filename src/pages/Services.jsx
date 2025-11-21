@@ -6,30 +6,36 @@ function Services() {
   return (
     <div className="space-y-12">
       <SectionHeader
-        label="Coverage Plans"
-        title="Our Insurance Services"
-        description="Choose from a wide range of personal and commercial insurance options."
+        label="Our Services"
+        title="Health & Wellness Plans"
+        description="Comprehensive healthcare solutions designed to support your well-being at every stage of life."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card title="Home Insurance">
-          Safeguard your home from fire, theft, storms, and more.
-        </Card>
-        <Card title="Auto Insurance">
-          Affordable coverage for drivers of all experience levels.
-        </Card>
-        <Card title="Life Insurance">
-          Protect your family's financial future.
-        </Card>
-        <Card title="Business Liability">
-          Peace of mind for business owners and entrepreneurs.
-        </Card>
-        <Card title="Health Plans">
-          Simple, flexible health coverage for you and your family.
-        </Card>
-        <Card title="Travel Protection">
-          Coverage for trips, cancellations, and emergencies abroad.
-        </Card>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Health Insurance Plans</h3>
+          <p className="text-neutral-dark mt-2 font-body">Flexible coverage options designed for every stage of life.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Family & Group Coverage</h3>
+          <p className="text-neutral-dark mt-2 font-body">Comprehensive plans that protect your entire family.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Dental & Vision Benefits</h3>
+          <p className="text-neutral-dark mt-2 font-body">Complete oral and vision care for optimal health.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Preventative Care Programs</h3>
+          <p className="text-neutral-dark mt-2 font-body">Proactive wellness programs to keep you healthy.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Wellness & Nutrition Support</h3>
+          <p className="text-neutral-dark mt-2 font-body">Guidance and resources for a healthier lifestyle.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
+          <h3 className="text-primary-dark font-heading font-semibold">Telehealth Consultations</h3>
+          <p className="text-neutral-dark mt-2 font-body">Convenient virtual care from the comfort of your home.</p>
+        </div>
       </div>
 
       <div className="text-center">

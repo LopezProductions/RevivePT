@@ -3,9 +3,9 @@ function Button({ children, variant = "primary", className = "", ...props }) {
     "px-5 py-2 rounded-full text-sm font-semibold transition-all";
 
   const styles = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
+    primary: "bg-primary text-white hover:bg-primary-dark font-body",
     outline:
-      "border border-slate-300 text-slate-700 hover:border-blue-600 hover:text-blue-600",
+      "border border-neutral text-neutral-dark hover:border-primary hover:text-primary font-body",
   };
 
   return (
