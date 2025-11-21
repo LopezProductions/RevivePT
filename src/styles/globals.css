@@ -1,0 +1,10 @@
+/* Additional global tweaks */
+
+h1, h2, h3, h4 {
+  @apply font-semibold text-slate-900;
+}
+
+p {
+  @apply text-slate-600;
+}
+
