@@ -7,39 +7,51 @@ function Services() {
     <div className="space-y-12">
       <SectionHeader
         label="Our Services"
-        title="Health & Wellness Plans"
-        description="Comprehensive healthcare solutions designed to support your well-being at every stage of life."
+        title="Comprehensive Physical Therapy Services"
+        description="Evidence-based treatment programs designed to restore your movement, reduce pain, and help you return to the activities you love."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Health Insurance Plans</h3>
-          <p className="text-neutral-dark mt-2 font-body">Flexible coverage options designed for every stage of life.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Sports Injury Rehab</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Evidence-based rehab programs to restore strength and mobility after injury.
+          </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Family & Group Coverage</h3>
-          <p className="text-neutral-dark mt-2 font-body">Comprehensive plans that protect your entire family.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Post-Surgical Rehabilitation</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Specialized recovery programs to help you heal safely and effectively after surgery.
+          </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Dental & Vision Benefits</h3>
-          <p className="text-neutral-dark mt-2 font-body">Complete oral and vision care for optimal health.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Chronic Pain Management</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Comprehensive approaches to reduce pain and improve your quality of life.
+          </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Preventative Care Programs</h3>
-          <p className="text-neutral-dark mt-2 font-body">Proactive wellness programs to keep you healthy.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Mobility & Movement Training</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Improve flexibility, balance, and functional movement patterns for daily activities.
+          </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Wellness & Nutrition Support</h3>
-          <p className="text-neutral-dark mt-2 font-body">Guidance and resources for a healthier lifestyle.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Geriatric Physical Therapy</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Gentle, personalized care to maintain independence and prevent falls as you age.
+          </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-          <h3 className="text-primary-dark font-heading font-semibold">Telehealth Consultations</h3>
-          <p className="text-neutral-dark mt-2 font-body">Convenient virtual care from the comfort of your home.</p>
+        <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="font-heading text-xl text-revive-green font-semibold">Workplace Ergonomics</h3>
+          <p className="text-gray-600 mt-2 font-body">
+            Ergonomic assessments and interventions to prevent work-related injuries and discomfort.
+          </p>
         </div>
       </div>
 
       <div className="text-center">
-        <Button>Request a Quote</Button>
+        <Button>Book an Evaluation</Button>
       </div>
     </div>
   );

@@ -7,16 +7,29 @@ function Home() {
   return (
     <div className="space-y-16">
       {/* Hero */}
-      <section className="text-center space-y-6 bg-gradient-to-br from-primary-light to-white rounded-3xl p-12">
-        <h1 className="text-4xl font-heading font-bold text-primary-dark">
-          Your Health. Your Care. Done Right.
-        </h1>
-        <p className="font-body text-neutral-dark max-w-2xl mx-auto text-sm leading-relaxed">
-          Compassionate, affordable coverage for individuals, families, and small businesses.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <Button className="bg-primary text-white hover:bg-primary-dark">Get a Free Quote</Button>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary-light">Schedule a Consultation</Button>
+      <section className="bg-gradient-to-br from-revive-soft to-white py-24 rounded-3xl">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-revive-green">
+            Restore Your Motion.<br />Reclaim Your Life.
+          </h1>
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto font-body">
+            Personalized physical therapy designed to heal injuries, improve mobility,
+            and build long-term strength — so you can get back to what you love.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#"
+              className="bg-revive-teal text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-revive-green transition font-body"
+            >
+              Book Evaluation
+            </a>
+            <a
+              href="#"
+              className="bg-revive-peach text-revive-green px-8 py-3 rounded-full font-semibold shadow-sm hover:bg-revive-tint transition font-body"
+            >
+              Free Movement Assessment
+            </a>
+          </div>
         </div>
       </section>
 
@@ -24,56 +37,91 @@ function Home() {
       <section>
         <SectionHeader 
           label="Our Services"
-          title="Comprehensive Health & Wellness Plans"
-          description="Compassionate care designed to support your health journey at every stage of life."
+          title="Comprehensive Physical Therapy Services"
+          description="Evidence-based treatment programs designed to restore your movement, reduce pain, and help you return to the activities you love."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Health Insurance Plans</h3>
-            <p className="text-neutral-dark mt-2 font-body">Flexible coverage options designed for every stage of life.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Sports Injury Rehab</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Evidence-based rehab programs to restore strength and mobility after injury.
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Family & Group Coverage</h3>
-            <p className="text-neutral-dark mt-2 font-body">Comprehensive plans that protect your entire family.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Post-Surgical Rehabilitation</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Specialized recovery programs to help you heal safely and effectively after surgery.
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Dental & Vision Benefits</h3>
-            <p className="text-neutral-dark mt-2 font-body">Complete oral and vision care for optimal health.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Chronic Pain Management</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Comprehensive approaches to reduce pain and improve your quality of life.
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Preventative Care Programs</h3>
-            <p className="text-neutral-dark mt-2 font-body">Proactive wellness programs to keep you healthy.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Mobility & Movement Training</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Improve flexibility, balance, and functional movement patterns for daily activities.
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Wellness & Nutrition Support</h3>
-            <p className="text-neutral-dark mt-2 font-body">Guidance and resources for a healthier lifestyle.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Geriatric Physical Therapy</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Gentle, personalized care to maintain independence and prevent falls as you age.
+            </p>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-neutral-light">
-            <h3 className="text-primary-dark font-heading font-semibold">Telehealth Consultations</h3>
-            <p className="text-neutral-dark mt-2 font-body">Convenient virtual care from the comfort of your home.</p>
+          <div className="bg-white border border-revive-soft p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="font-heading text-xl text-revive-green font-semibold">Workplace Ergonomics</h3>
+            <p className="text-gray-600 mt-2 font-body">
+              Ergonomic assessments and interventions to prevent work-related injuries and discomfort.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="mt-16">
-        <SectionHeader
-          label="Pricing"
-          title="Choose the Right Package"
-          description="Launch today with the basic template or upgrade to the full premium experience."
-        />
-
-        <div className="flex flex-col sm:flex-row justify-center gap-6 mt-6">
-          <CheckoutButton tier="basic" />
-          <CheckoutButton tier="premium" />
+      {/* Template Purchase Section */}
+      <section className="mt-16 bg-gradient-to-br from-revive-tint to-revive-soft p-8 rounded-3xl border border-revive-soft">
+        <div className="text-center max-w-3xl mx-auto">
+          <SectionHeader
+            label="Website Template"
+            title="Buy This RevivePT Template"
+            description="This is a fully functional website template ready for your physical therapy practice. All buttons and features are live and working. After purchase, you'll complete an intake form and receive your customized website within 48 hours."
+          />
+          
+          <div className="mt-8 p-6 bg-white rounded-2xl border border-revive-soft shadow-sm">
+            <div className="space-y-4 mb-6">
+              <p className="text-sm text-slate-600 font-body">
+                <strong className="text-revive-green">✓ Fully Functional:</strong> All buttons, forms, and navigation are live and working
+              </p>
+              <div className="bg-revive-soft p-4 rounded-xl border border-revive-aqua/30">
+                <p className="text-sm font-semibold text-revive-green font-heading mb-2">How It Works:</p>
+                <ol className="text-sm text-slate-700 font-body text-left space-y-2 list-decimal list-inside">
+                  <li>Purchase your template package below</li>
+                  <li>Complete the intake form with your business details</li>
+                  <li>Receive your customized website within <strong className="text-revive-green">48 hours</strong> after intake completion</li>
+                </ol>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <CheckoutButton tier="basic" />
+              <CheckoutButton tier="premium" />
+            </div>
+            <p className="text-xs text-slate-500 mt-4 font-body">
+              After purchase, you'll receive an intake form to provide your business information. Your website will be ready in 48 hours.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="text-center py-10">
-        <h2 className="text-xl font-heading font-semibold text-primary-dark">Need help choosing the right plan?</h2>
-        <p className="font-body text-neutral-dark text-sm mt-2">Speak with a licensed healthcare advisor.</p>
+        <h2 className="text-xl font-heading font-semibold text-revive-green">Ready to start your recovery journey?</h2>
+        <p className="font-body text-slate-700 text-sm mt-2">Speak with one of our licensed physical therapists to discuss your treatment options.</p>
         <Button className="mt-4">Schedule a Consultation</Button>
+        <p className="text-xs text-slate-400 mt-4 font-body italic">
+          *Example content - customize with your own services and contact information
+        </p>
       </section>
     </div>
   );

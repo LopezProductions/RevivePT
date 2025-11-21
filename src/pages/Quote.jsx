@@ -3,172 +3,241 @@ import SectionHeader from "../components/ui/SectionHeader.jsx";
 import Button from "../components/ui/Button.jsx";
 
 function Quote() {
-  const [type, setType] = useState("home");
-  const [coverage, setCoverage] = useState(200000);
+  const [planType, setPlanType] = useState("individual");
   const [age, setAge] = useState(30);
-  const [history, setHistory] = useState("clean");
+  const [coverageLevel, setCoverageLevel] = useState("standard");
+  const [dependents, setDependents] = useState(0);
+  const [deductible, setDeductible] = useState("medium");
+  const [preexisting, setPreexisting] = useState("none");
   const [discounts, setDiscounts] = useState({
-    bundling: false,
-    safeDriver: false,
-    securitySystem: false,
+    wellness: false,
+    nonSmoker: false,
+    employer: false,
   });
 
-  // Premium Calculation
+  // Health Insurance Premium Calculation
   function calculateQuote() {
-    let base = 25;
+    let base = 200; // Base monthly premium
 
-    // Type multiplier
-    const typeMultiplier = {
-      home: 0.0004,
-      auto: 0.0009,
-      life: 0.0007,
-      business: 0.0005,
+    // Plan type multiplier
+    const planMultipliers = {
+      individual: 1.0,
+      family: 2.5,
+      group: 0.85,
     };
+    base *= planMultipliers[planType];
 
-    let cost = base + coverage * typeMultiplier[type];
+    // Age factor (health insurance typically increases with age)
+    if (age < 30) base *= 0.7;
+    else if (age < 40) base *= 0.85;
+    else if (age < 50) base *= 1.0;
+    else if (age < 60) base *= 1.4;
+    else base *= 2.0;
 
-    // Age risk factor
-    if (type === "auto") {
-      if (age < 25) cost += 30;
-      else if (age < 40) cost += 10;
+    // Coverage level
+    const coverageMultipliers = {
+      basic: 0.7,
+      standard: 1.0,
+      premium: 1.5,
+    };
+    base *= coverageMultipliers[coverageLevel];
+
+    // Dependents (for family plans)
+    if (planType === "family") {
+      base += dependents * 150;
     }
 
-    // History
-    if (history === "minor") cost += 15;
-    if (history === "major") cost += 40;
+    // Deductible impact (higher deductible = lower premium)
+    const deductibleMultipliers = {
+      low: 1.3,    // Low deductible = higher premium
+      medium: 1.0,
+      high: 0.75,  // High deductible = lower premium
+    };
+    base *= deductibleMultipliers[deductible];
+
+    // Pre-existing conditions
+    if (preexisting === "minor") base += 50;
+    if (preexisting === "moderate") base += 120;
+    if (preexisting === "major") base += 250;
 
     // Discounts
-    if (discounts.bundling) cost -= 10;
-    if (discounts.safeDriver) cost -= 8;
-    if (discounts.securitySystem) cost -= 12;
+    if (discounts.wellness) base -= 20;
+    if (discounts.nonSmoker) base -= 30;
+    if (discounts.employer) base *= 0.9; // 10% employer contribution
 
-    return Math.max(cost, 15).toFixed(2);
+    return Math.max(base, 100).toFixed(2);
   }
 
   return (
     <div className="space-y-10">
       <SectionHeader
-        label="Quote Tool"
-        title="Estimate Your Monthly Premium"
-        description="This calculator provides a quick estimate based on common coverage and risk factors."
+        label="Health Insurance Quote"
+        title="Get Your Health Insurance Estimate"
+        description="Get a personalized estimate for your health insurance premium based on your coverage needs and preferences."
       />
 
       <div className="space-y-6">
-        {/* Insurance Type */}
+        {/* Plan Type */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1">
-            Insurance Type
+          <label className="block text-sm font-medium text-slate-700 mb-1 font-heading">
+            Plan Type
           </label>
           <select
-            value={type}
-            onChange={(e) => setType(e.target.value)}
-            className="border border-slate-300 rounded-lg px-4 py-2 w-full bg-white"
+            value={planType}
+            onChange={(e) => setPlanType(e.target.value)}
+            className="border border-revive-soft rounded-lg px-4 py-2 w-full bg-white focus:border-revive-teal focus:ring-2 focus:ring-revive-teal/20 transition"
           >
-            <option value="home">Home Insurance</option>
-            <option value="auto">Auto Insurance</option>
-            <option value="life">Life Insurance</option>
-            <option value="business">Business Insurance</option>
+            <option value="individual">Individual Plan</option>
+            <option value="family">Family Plan</option>
+            <option value="group">Group/Employer Plan</option>
           </select>
         </div>
 
-        {/* Coverage Slider */}
+        {/* Age */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
-            Coverage Amount: ${coverage.toLocaleString()}
+          <label className="block text-sm font-medium text-slate-700 mb-2 font-heading">
+            Primary Applicant Age: {age} years
           </label>
           <input
             type="range"
-            min="50000"
-            max="1000000"
-            step="50000"
-            value={coverage}
-            onChange={(e) => setCoverage(Number(e.target.value))}
-            className="w-full accent-blue-600"
+            min="18"
+            max="75"
+            value={age}
+            onChange={(e) => setAge(Number(e.target.value))}
+            className="w-full accent-revive-teal"
           />
+          <div className="flex justify-between text-xs text-slate-500 mt-1">
+            <span>18</span>
+            <span>75</span>
+          </div>
         </div>
 
-        {/* Age (Auto + Life logic) */}
-        {(type === "auto" || type === "life") && (
+        {/* Coverage Level */}
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-1 font-heading">
+            Coverage Level
+          </label>
+          <select
+            value={coverageLevel}
+            onChange={(e) => setCoverageLevel(e.target.value)}
+            className="border border-revive-soft rounded-lg px-4 py-2 w-full bg-white focus:border-revive-teal focus:ring-2 focus:ring-revive-teal/20 transition"
+          >
+            <option value="basic">Basic (Essential Coverage)</option>
+            <option value="standard">Standard (Comprehensive)</option>
+            <option value="premium">Premium (Full Coverage)</option>
+          </select>
+        </div>
+
+        {/* Dependents (for family plans) */}
+        {planType === "family" && (
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
-              Your Age: {age}
+            <label className="block text-sm font-medium text-slate-700 mb-2 font-heading">
+              Number of Dependents: {dependents}
             </label>
             <input
               type="range"
-              min="18"
-              max="75"
-              value={age}
-              onChange={(e) => setAge(Number(e.target.value))}
-              className="w-full accent-blue-600"
+              min="0"
+              max="5"
+              value={dependents}
+              onChange={(e) => setDependents(Number(e.target.value))}
+              className="w-full accent-revive-teal"
             />
+            <div className="flex justify-between text-xs text-slate-500 mt-1">
+              <span>0</span>
+              <span>5+</span>
+            </div>
           </div>
         )}
 
-        {/* Driving / Claim History */}
-        {type === "auto" && (
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Driving History
-            </label>
-            <select
-              value={history}
-              onChange={(e) => setHistory(e.target.value)}
-              className="border border-slate-300 rounded-lg px-4 py-2 w-full"
-            >
-              <option value="clean">Clean Record</option>
-              <option value="minor">Minor Violations</option>
-              <option value="major">Major Violations</option>
-            </select>
-          </div>
-        )}
+        {/* Deductible */}
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-1 font-heading">
+            Annual Deductible Preference
+          </label>
+          <select
+            value={deductible}
+            onChange={(e) => setDeductible(e.target.value)}
+            className="border border-revive-soft rounded-lg px-4 py-2 w-full bg-white focus:border-revive-teal focus:ring-2 focus:ring-revive-teal/20 transition"
+          >
+            <option value="low">Low ($500-$1,000) - Higher Premium</option>
+            <option value="medium">Medium ($2,000-$3,000) - Balanced</option>
+            <option value="high">High ($5,000+) - Lower Premium</option>
+          </select>
+        </div>
+
+        {/* Pre-existing Conditions */}
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-1 font-heading">
+            Pre-existing Conditions
+          </label>
+          <select
+            value={preexisting}
+            onChange={(e) => setPreexisting(e.target.value)}
+            className="border border-revive-soft rounded-lg px-4 py-2 w-full bg-white focus:border-revive-teal focus:ring-2 focus:ring-revive-teal/20 transition"
+          >
+            <option value="none">None</option>
+            <option value="minor">Minor (Controlled)</option>
+            <option value="moderate">Moderate</option>
+            <option value="major">Major</option>
+          </select>
+        </div>
 
         {/* Discounts */}
-        <div className="space-y-2">
-          <p className="text-sm font-medium text-slate-700">Eligible Discounts</p>
+        <div className="space-y-3 p-4 bg-revive-tint rounded-xl border border-revive-soft">
+          <p className="text-sm font-medium text-revive-green font-heading">Eligible Discounts</p>
 
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex items-center gap-3 text-sm text-slate-700 cursor-pointer hover:text-revive-green transition-colors">
             <input
               type="checkbox"
-              checked={discounts.bundling}
+              checked={discounts.wellness}
               onChange={(e) =>
-                setDiscounts({ ...discounts, bundling: e.target.checked })
+                setDiscounts({ ...discounts, wellness: e.target.checked })
               }
+              className="w-4 h-4 accent-revive-teal"
             />
-            Bundling (Home + Auto)
+            <span className="font-body">Wellness Program Participation</span>
           </label>
 
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex items-center gap-3 text-sm text-slate-700 cursor-pointer hover:text-revive-green transition-colors">
             <input
               type="checkbox"
-              checked={discounts.safeDriver}
+              checked={discounts.nonSmoker}
               onChange={(e) =>
-                setDiscounts({ ...discounts, safeDriver: e.target.checked })
+                setDiscounts({ ...discounts, nonSmoker: e.target.checked })
               }
+              className="w-4 h-4 accent-revive-teal"
             />
-            Safe Driver Discount
+            <span className="font-body">Non-Smoker Discount</span>
           </label>
 
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex items-center gap-3 text-sm text-slate-700 cursor-pointer hover:text-revive-green transition-colors">
             <input
               type="checkbox"
-              checked={discounts.securitySystem}
+              checked={discounts.employer}
               onChange={(e) =>
-                setDiscounts({ ...discounts, securitySystem: e.target.checked })
+                setDiscounts({ ...discounts, employer: e.target.checked })
               }
+              className="w-4 h-4 accent-revive-teal"
             />
-            Home Security System
+            <span className="font-body">Employer Contribution (10% off)</span>
           </label>
         </div>
       </div>
 
       {/* Output */}
-      <div className="p-6 border border-slate-200 rounded-2xl bg-slate-50 w-full text-center">
-        <p className="text-sm text-slate-500">Estimated Monthly Premium</p>
-        <h2 className="text-3xl font-bold text-blue-600 mt-2">
+      <div className="p-8 border border-revive-soft rounded-2xl bg-gradient-to-br from-revive-soft to-white w-full text-center shadow-sm">
+        <p className="text-sm text-slate-600 font-body">Estimated Monthly Premium</p>
+        <h2 className="text-4xl font-bold text-revive-green mt-2 font-heading">
           ${calculateQuote()}
         </h2>
+        <p className="text-xs text-slate-500 mt-2 font-body">
+          *This is an estimate. Final premium may vary based on underwriting.
+        </p>
 
-        <Button className="mt-4">Start Application</Button>
+        <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button>Get Full Quote</Button>
+          <Button variant="outline">Compare Plans</Button>
+        </div>
       </div>
     </div>
   );

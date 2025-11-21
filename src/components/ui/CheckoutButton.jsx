@@ -12,13 +12,14 @@ function CheckoutButton({ tier = "basic", children, className = "" }) {
     <a
       href={disabled ? "#" : url}
       target="_blank"
-      className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${
+      rel="noopener noreferrer"
+      className={`px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg ${
         tier === "premium"
-          ? "bg-blue-600 text-white hover:bg-blue-700"
-          : "border border-blue-600 text-blue-600 hover:bg-blue-50"
+          ? "bg-revive-teal text-white hover:bg-revive-green font-body"
+          : "border-2 border-revive-teal text-revive-green hover:bg-revive-teal hover:text-white font-body"
       } ${disabled ? "opacity-40 pointer-events-none" : ""} ${className}`}
     >
-      {children || (tier === "premium" ? "Buy Premium – $250" : "Buy Basic – $50")}
+      {children || (tier === "premium" ? "Buy Premium Template – $250" : "Buy Basic Template – $50")}
     </a>
   );
 }
