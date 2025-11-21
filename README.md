@@ -32,7 +32,6 @@ A clean, modern physical therapy website template built with React, Vite, and Ta
 
 ## Getting Started
 
-```bash
 # Install dependencies
 npm install
 
@@ -43,10 +42,7 @@ npm run dev
 npm run build
 
 # Preview production build
-npm run preview
-```
-
-## Deployment
+npm run preview## Deployment
 
 This template is configured for easy deployment on Netlify, Vercel, or any static hosting provider.
 
