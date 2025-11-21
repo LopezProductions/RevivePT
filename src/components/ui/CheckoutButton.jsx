@@ -26,3 +26,4 @@ function CheckoutButton({ tier = "basic", children, className = "" }) {
 export default CheckoutButton;
 
 
+
