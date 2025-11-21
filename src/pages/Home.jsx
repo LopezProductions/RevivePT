@@ -80,6 +80,39 @@ function Home() {
         </div>
       </section>
 
+      {/* New Why Choose RevivePT Section */}
+      <section className="py-16 bg-revive-soft rounded-3xl">
+        <SectionHeader 
+          label="Why Choose Us"
+          title="Experience the RevivePT Difference"
+          description="Discover our personalized approach to physical therapy that combines expert care with a supportive environment to help you achieve lasting results."
+        />
+        <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-5xl mx-auto px-6">
+          <div className="space-y-4">
+            <img 
+              src="/revive-pt1.png" 
+              alt="Physical therapist assisting patient with mobility exercises" 
+              className="w-full rounded-2xl shadow-md object-cover"
+            />
+            <h3 className="text-xl font-heading font-semibold text-revive-green">Personalized Treatment Plans</h3>
+            <p className="text-gray-600 font-body">
+              Our expert therapists create customized programs tailored to your specific needs and goals, ensuring optimal recovery and long-term wellness.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <img 
+              src="/revive-pt2.png" 
+              alt="Patient performing strength training in a modern PT clinic" 
+              className="w-full rounded-2xl shadow-md object-cover"
+            />
+            <h3 className="text-xl font-heading font-semibold text-revive-green">State-of-the-Art Facilities</h3>
+            <p className="text-gray-600 font-body">
+              Experience therapy in our modern, welcoming clinic equipped with the latest tools and technology for effective rehabilitation.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Template Purchase Section */}
       <section className="mt-16 bg-gradient-to-br from-revive-tint to-revive-soft p-8 rounded-3xl border border-revive-soft">
         <div className="text-center max-w-3xl mx-auto">
