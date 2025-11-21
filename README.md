@@ -1,24 +1,24 @@
-# ShieldCare Health Template
+# RevivePT Physical Therapy Template
 
-A clean, modern health and wellness website template built with React, Vite, and TailwindCSS. Perfect for medical practices, wellness centers, and healthcare businesses.
+A clean, modern physical therapy website template built with React, Vite, and TailwindCSS. Perfect for PT clinics, wellness centers, and rehabilitation practices.
 
 ## Features
 
-- 🏥 Health-focused design with medical/wellness branding
-- 🎨 Soft, trust-building color palette (calm blues and wellness mint)
+- 🌿 Wellness-focused design with calming, uplifting branding
+- 🎨 Soothing color palette (teal, green, aqua tones for healing and recovery)
 - 📱 Fully responsive mobile-first design
 - ⚡ Fast performance with Vite
 - 🎯 SEO-friendly structure
 - 💳 Integrated pricing system with Stripe
-- 📊 Dynamic quote calculator
+- 📊 Dynamic health insurance quote calculator
 - 🎨 Custom typography (Inter + Nunito)
 
 ## Pages Included
 
-- **Home** - Hero section with health-focused messaging and services overview
-- **About** - Company story and mission
-- **Services** - Health & wellness plans showcase
-- **Quote** - Interactive premium calculator
+- **Home** - Hero section with recovery messaging and services overview
+- **About** - Practice story and mission
+- **Services** - Physical therapy programs showcase
+- **Quote** - Interactive health insurance quote tool
 - **Pricing** - Template pricing page
 - **Contact** - Contact form
 
@@ -32,7 +32,6 @@ A clean, modern health and wellness website template built with React, Vite, and
 
 ## Getting Started
 
-```bash
 # Install dependencies
 npm install
 
@@ -43,13 +42,10 @@ npm run dev
 npm run build
 
 # Preview production build
-npm run preview
-```
-
-## Deployment
+npm run preview## Deployment
 
 This template is configured for easy deployment on Netlify, Vercel, or any static hosting provider.
 
 ## License
 
-ShieldCare Health Template v1.0 - Lopez Productions
+RevivePT Physical Therapy Template v1.0 - Lopez Productions
